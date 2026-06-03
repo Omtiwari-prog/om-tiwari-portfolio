@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Om Tiwari Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 10%;
+      background:#111827;
+      position:fixed;
+      top:0;
+      z-index:1000;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#38bdf8;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:30px;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#38bdf8;
+    }
+
+    /* HERO */
+    
+    
+
+    .hero{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
+      padding:0 20px;
+      background:linear-gradient(to right,#0f172a,#1e293b);
+    }
+
+    .hero h1{
+      font-size:70px;
+      margin-bottom:20px;
+    }
+
+    .hero h1 span{
+      color:#38bdf8;
+    }
+
+    .hero p{
+      max-width:700px;
+      line-height:1.8;
+      color:#cbd5e1;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      padding:14px 35px;
+      background:#38bdf8;
+      color:white;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      font-size:16px;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#0284c7;
+      transform:scale(1.05);
+    }
+
+    /* ABOUT */
+
+    section{
+      padding:100px 10%;
+    }
+
+    .title{
+      text-align:center;
+      font-size:40px;
+      margin-bottom:60px;
+      color:#38bdf8;
+    }
+
+    .about-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:50px;
+      flex-wrap:wrap;
+    }
+
+    .about-text{
+      flex:1;
+    }
+
+    .about-text h3{
+      font-size:30px;
+      margin-bottom:20px;
+    }
+
+    .about-text p{
+      color:#cbd5e1;
+      line-height:1.8;
+    }
+
+    .about-img{
+      flex:1;
+      text-align: right;
+    }
+
+    .about-img img{
+      width: 250px;
+      border-radius:20px;
+      border:4px solid #becdd3;
+    }
+    .social-links{
+      
+      font-size: 30px;
+      word-spacing: normal;
+      align-items: bottom;
+      
+      
+    }
+    
+  
+    
+
+    /* SKILLS */
+
+    .skills-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:25px;
+    }
+
+    .skill{
+      background:#1e293b;
+      padding:30px;
+      border-radius:15px;
+      text-align:center;
+      transition:0.3s;
+    }
+
+    .skill:hover{
+      transform:translateY(-10px);
+      background:#334155;
+    }
+
+    .skill h3{
+      margin-top:15px;
+      color:#38bdf8;
+    }
+
+    /* PROJECTS */
+
+    .projects-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .project-card{
+      background:#1e293b;
+      border-radius:15px;
+      overflow:hidden;
+      transition:0.3s;
+    }
+
+    .project-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .project-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .project-content{
+      padding:20px;
+    }
+
+    .project-content h3{
+      color:#38bdf8;
+      margin-bottom:10px;
+    }
+
+    .project-content p{
+      color:#cbd5e1;
+      line-height:1.7;
+      margin-bottom:15px;
+    }
+
+    /* CONTACT */
+
+    .contact form{
+      max-width:700px;
+      margin:auto;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    .contact input,
+    .contact textarea{
+      padding:15px;
+      border:none;
+      border-radius:10px;
+      background:#1e293b;
+      color:white;
+      outline:none;
+    }
+
+    .contact textarea{
+      height:150px;
+      resize:none;
+    }
+
+    /* FOOTER */
+
+    footer{
+      text-align:center;
+      padding:30px;
+      background:#111827;
+      color:#94a3b8;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:45px;
+      }
+
+      .about-content{
+        flex-direction:column;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="logo">Om Portfolio</div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <h1>Hello, I'm <span>Om Tiwari</span></h1>
+
+    <p>
+      Frontend Developer, Python Programmer and AI Enthusiast.
+      I build responsive websites, AI projects and modern web applications.
+    </p>
+
+    <button class="btn">Hire Me:
+
+      <a href="Om_Tiwari_Resume_Professional.pdf" download>
+
+    <button class="btn">Download Resume</button>
+</a>
+    </button>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <h2 class="title">About Me</h2>
+
+    <div class="about-content">
+
+      <div>
+        <div class="about-img">
+      <img src="image.jpg.png" alt="Om Tiwari" width="200px"> 
+      </div>
+
+
+
+        
+      
+
+
+
+
+
+      <div class="about-text">
+        <h3>Web Developer & Python Programmer</h3>
+
+        <p>
+          I am passionate about web development, AI projects,
+          gesture recognition systems and creating modern websites.
+          I love learning new technologies and building creative projects.
+        </p>
+      </div>
+
+    </div>
+
+      
+    
+
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <h2 class="title">My Skills</h2>
+
+    <div class="skills-container">
+
+      <div class="skill">
+        <h3>HTML</h3>
+      </div>
+
+      <div class="skill">
+        <h3>CSS</h3>
+      </div>
+
+      <div class="skill">
+        <h3>JavaScript</h3>
+      </div>
+
+      <div class="skill">
+        <h3>Python</h3>
+      </div>
+
+      <div class="skill">
+        <h3>React.js</h3>
+      </div>
+
+      <div class="skill">
+        <h3>MongoDB</h3>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <h2 class="title">Projects</h2>
+
+    <div class="projects-container">
+
+      <div class="project-card">
+
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="project-content">
+
+          <h3>Gesture Recognition System</h3>
+
+          <p>
+            AI-based hand gesture recognition project using Python,
+            OpenCV and MediaPipe.
+          </p>
+          <a href="https://github.com/Omtiwari-prog/GestureRecognition" target="_blank">
+            <button class="btn">View Project</button>
+          </a>
+           
+
+          
+          
+          
+          
+
+      </div>
+
+      <div class="project-card">
+
+        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="project-content">
+
+          <h3>Astrologer Website</h3>
+
+          <p>
+            Modern astrology website with horoscope, kundli matching
+            and consultation booking system.
+          </p>
+          
+
+            <button class="btn">View Project</button>
+            
+          
+
+        </div>
+
+      </div>
+
+      <div class="project-card">
+
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="project-content">
+
+          <h3>Portfolio Website</h3>
+
+          <p>
+            Responsive portfolio website built using HTML, CSS
+            and JavaScript.
+          </p>
+            <a href="http://127.0.0.1:5500/porfolio.html/main.html">
+              <button class="btn">View Project</button>
+            </a>
+
+
+              
+              
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <h2 class="title">Contact Me</h2>
+
+
+  <p class="contact-text">
+    I'm open to internships, freelance projects, and collaboration opportunities.
+    Feel free to reach out!
+  </p>
+
+  <div class="contact-info">
+
+    <div class="contact-card">
+      <h3>Email</h3>
+      <p>omtiwari58554@gmail.com</p>
+    </div>
+
+    <div class="contact-card">
+      <h3>Phone</h3>
+      <p>+91 8999081760 </p>
+    </div>
+
+    <div class="contact-card">
+      <h3>Location</h3>
+      <p>Mumbai, Maharashtra, India</p>
+    </div>
+
+  </div>
+
+  <div class="social-links">
+    <button onclick="window.open('https://github.com/Omtiwari-prog', '_blank')">
+      <i class="fab fa-github"></i>Github link
+    </button>
+    
+
+    <button onclick="window.open('https://www.linkedin.com/in/om-tiwari-6b5a831b2/', '_blank')">
+    <i class="fab fa-linkedin"></i>LinkedIn Profile
+    </button>
+
+    <button onclick="window.open('https://omtiwari58554@gmail.com', '_blank')">
+        <i class="fab fa-envelope"></i>Gmail 
+    </button>
+  </div>
+
+
+
+
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" required></textarea>
+    <button class="btn">Send Message</button>
+  </form>
+
+</section>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Om Tiwari | All Rights Reserved
+  </footer>
+
+</body>
+</html>
